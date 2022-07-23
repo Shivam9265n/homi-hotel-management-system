@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "BAIT2113-Homi-HMS"

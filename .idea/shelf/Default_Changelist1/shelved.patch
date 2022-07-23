@@ -1,0 +1,165 @@
+Index: app/src/main/java/com/example/bait2113_homi_hms/Checklist/ChecklistActivity2.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bait2113_homi_hms.Checklist\r\n\r\nimport android.app.AlertDialog\r\nimport android.content.DialogInterface\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.widget.Button\r\nimport android.widget.ImageView\r\nimport android.widget.TextView\r\nimport android.widget.Toast\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.recyclerview.widget.LinearLayoutManager\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.example.bait2113_homi_hms.Housekeeping.HousekeepingModel\r\nimport com.example.bait2113_homi_hms.InventoryModel\r\nimport com.example.bait2113_homi_hms.MainActivity\r\nimport com.example.bait2113_homi_hms.R\r\nimport com.google.android.material.dialog.MaterialAlertDialogBuilder\r\nimport com.google.firebase.database.*\r\n\r\nclass ChecklistActivity2: AppCompatActivity() {\r\n    private var checklistData = mutableListOf<InventoryModel>()\r\n    private lateinit var checklistAdapter: ChecklistAdapter\r\n    lateinit var key: String\r\n    private val deductQty:Int = 3\r\n    var item: HousekeepingModel = HousekeepingModel()\r\n    lateinit var arrowBack: ImageView\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.checklist_main2)\r\n\r\n        if (intent.extras != null) {\r\n            key = intent.getStringExtra(\"key\").toString()\r\n            //readChecklist()\r\n        }\r\n        val submit = findViewById<Button>(R.id.submit_checklist_btn)\r\n        submit.setOnClickListener {\r\n            //saveChecklist()\r\n            val count = checklistAdapter.count\r\n            if(count == checklistAdapter.itemCount){  //if all checkbox is ticked\r\n                showConfirmMsgDialog()\r\n            }\r\n            else{\r\n                showErrorMsgToast()\r\n            }\r\n        }\r\n         readChecklist()\r\n        arrowBack = findViewById<ImageView>(R.id.Checklist_arrow_back_icon)\r\n\r\n        arrowBack.setOnClickListener {\r\n            onBackPressed()\r\n        }\r\n    }\r\n\r\n    private fun showConfirmMsgDialog()\r\n    {\r\n        MaterialAlertDialogBuilder(this)\r\n                .setTitle(getString(R.string.submut_confirm))\r\n                .setMessage(getString(R.string.submut_msg))\r\n                .setCancelable(false)\r\n                .setIcon(android.R.drawable.ic_dialog_alert)\r\n                .setNegativeButton(getString(R.string.cancel)){ _, _ ->\r\n\r\n                }\r\n                .setPositiveButton(getString(R.string.confirm)) { _, _ ->\r\n                    saveChecklist()\r\n                    updateInventory()\r\n                    val intent = Intent(this, MainActivity::class.java)\r\n                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)\r\n                    startActivity(intent)\r\n                }\r\n                .show()\r\n    }\r\n\r\n    private fun showErrorMsgToast(){\r\n        Toast.makeText(this, R.string.toast_checklistMsg, Toast.LENGTH_LONG).show()\r\n    }\r\n\r\n    private fun saveChecklist(){\r\n        item.setStatus(\"Clean\")\r\n        val checklistRef: DatabaseReference = FirebaseDatabase.getInstance().getReference(\"Housekeeping/\")\r\n\r\n        if (key != null) {\r\n            checklistRef.child(key).setValue(item)\r\n        }\r\n    }\r\n\r\n    private fun updateInventory(){\r\n        for(item in checklistData.indices){\r\n            checklistData[item].qty = checklistData[item].qty?.minus(deductQty)\r\n        }\r\n        val inventoryRef: DatabaseReference = FirebaseDatabase.getInstance().getReference(\"Inventory\")\r\n        for(item in checklistData){\r\n            inventoryRef.child(item.inventoryId.toString()).setValue(item)\r\n        }\r\n    }\r\n    private fun readChecklist(){\r\n        val roomNum:TextView = findViewById<TextView>(R.id.room_no_Checklist2)\r\n        val roomType:TextView = findViewById<TextView>(R.id.room_Type_Checklist2)\r\n        val housekeeper:TextView = findViewById<TextView>(R.id.txt_Housekeeper_Checklist2)\r\n        val dateCreated:TextView = findViewById<TextView>(R.id.txt_Date_Checklist2)\r\n        val timeCreated:TextView = findViewById<TextView>(R.id.txt_Time_Checklist2)\r\n        // Read from the database\r\n        val database = FirebaseDatabase.getInstance()\r\n        val ref = database.getReference(\"Housekeeping/\" + key + \"/\")\r\n\r\n        ref.addValueEventListener(object : ValueEventListener {\r\n            override fun onDataChange(dataSnapshot: DataSnapshot) {\r\n                item = dataSnapshot.getValue(HousekeepingModel::class.java)!!\r\n                roomNum.setText(item.roomName)\r\n                roomType.setText(item.getRoomCat())\r\n                housekeeper.setText(item.getHousekeeper())\r\n                dateCreated.setText(item.getDateCreated())\r\n                timeCreated.setText(item.getTimeCreated())\r\n            }\r\n\r\n            override fun onCancelled(databaseError: DatabaseError) {\r\n\r\n            }\r\n        })\r\n\r\n\r\n        val checklistRef = database.getReference(\"Inventory/\")\r\n        checklistRef.addValueEventListener(object : ValueEventListener {\r\n            override fun onDataChange(dataSnapshot: DataSnapshot) {\r\n                for(data in dataSnapshot.children){\r\n                    val model = data.getValue(InventoryModel::class.java)\r\n                    checklistData.add(model as InventoryModel)\r\n                }\r\n                if(checklistData.size > 0){\r\n                    val recyclerView = findViewById<RecyclerView>(R.id.checklistRecyclerView)\r\n                    checklistAdapter = ChecklistAdapter(applicationContext, checklistData)\r\n                    recyclerView.layoutManager = LinearLayoutManager(applicationContext)\r\n                    recyclerView.adapter = checklistAdapter\r\n                    checklistAdapter.getItemCount()\r\n                    recyclerView.setHasFixedSize((true))\r\n                }\r\n            }\r\n\r\n            override fun onCancelled(error: DatabaseError) {\r\n\r\n            }\r\n        })\r\n\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/bait2113_homi_hms/Checklist/ChecklistActivity2.kt	(revision 8b134abff3aaf5925fe3b0049c61ee051136473f)
++++ app/src/main/java/com/example/bait2113_homi_hms/Checklist/ChecklistActivity2.kt	(date 1618900420817)
+@@ -1,7 +1,5 @@
+ package com.example.bait2113_homi_hms.Checklist
+ 
+-import android.app.AlertDialog
+-import android.content.DialogInterface
+ import android.content.Intent
+ import android.os.Bundle
+ import android.widget.Button
+@@ -9,6 +7,8 @@
+ import android.widget.TextView
+ import android.widget.Toast
+ import androidx.appcompat.app.AppCompatActivity
++import androidx.lifecycle.Observer
++import androidx.lifecycle.ViewModelProvider
+ import androidx.recyclerview.widget.LinearLayoutManager
+ import androidx.recyclerview.widget.RecyclerView
+ import com.example.bait2113_homi_hms.Housekeeping.HousekeepingModel
+@@ -17,23 +17,47 @@
+ import com.example.bait2113_homi_hms.R
+ import com.google.android.material.dialog.MaterialAlertDialogBuilder
+ import com.google.firebase.database.*
++import kotlinx.android.synthetic.main.checklist_main2.*
++
+ 
+-class ChecklistActivity2: AppCompatActivity() {
+-    private var checklistData = mutableListOf<InventoryModel>()
+-    private lateinit var checklistAdapter: ChecklistAdapter
++class ChecklistActivity2: AppCompatActivity(){
++    private var checklistData = mutableListOf<ChecklistModel>()
++    private var checklistData1 = arrayListOf<ChecklistModel>()
++    private var inventoryData = mutableListOf<InventoryModel>()
++    private var checklistDataTemp = ChecklistModel()
++    private  lateinit var checklistAdapter: ChecklistAdapter
+     lateinit var key: String
+     private val deductQty:Int = 3
+     var item: HousekeepingModel = HousekeepingModel()
++    private lateinit var viewModel: ChecklistViewModel
+     lateinit var arrowBack: ImageView
++    private val RECYCLER_POSITION_KEY = "recycler_position"
++    private var mPosition: Int = RecyclerView.NO_POSITION
++    private val mLayoutManager: LinearLayoutManager? = null
++
+     override fun onCreate(savedInstanceState: Bundle?) {
+ 
+         super.onCreate(savedInstanceState)
++        if (savedInstanceState!=null){
++            onRestoreInstanceState(savedInstanceState); // Restore data found in the Bundle
++        }
+         setContentView(R.layout.checklist_main2)
+ 
++        viewModel = ViewModelProvider(this).get(ChecklistViewModel::class.java)
+         if (intent.extras != null) {
+             key = intent.getStringExtra("key").toString()
+             //readChecklist()
+         }
++        readChecklist()
++
++        viewModel.getInventoryData()
++        viewModel.checklistData.observe(this, Observer {
++            checklistAdapter = ChecklistAdapter(applicationContext, checklistData)
++            checklistRecyclerView.adapter = checklistAdapter
++            checklistRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
++            checklistAdapter.checkedChecklist(it)
++        })
++
+         val submit = findViewById<Button>(R.id.submit_checklist_btn)
+         submit.setOnClickListener {
+             //saveChecklist()
+@@ -45,12 +69,13 @@
+                 showErrorMsgToast()
+             }
+         }
+-         readChecklist()
++
+         arrowBack = findViewById<ImageView>(R.id.Checklist_arrow_back_icon)
+ 
+         arrowBack.setOnClickListener {
+             onBackPressed()
+         }
++        
+     }
+ 
+     private fun showConfirmMsgDialog()
+@@ -65,7 +90,7 @@
+                 }
+                 .setPositiveButton(getString(R.string.confirm)) { _, _ ->
+                     saveChecklist()
+-                    updateInventory()
++                    //updateInventory()
+                     val intent = Intent(this, MainActivity::class.java)
+                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                     startActivity(intent)
+@@ -86,7 +111,7 @@
+         }
+     }
+ 
+-    private fun updateInventory(){
++/*    private fun updateInventory(){
+         for(item in checklistData.indices){
+             checklistData[item].qty = checklistData[item].qty?.minus(deductQty)
+         }
+@@ -94,7 +119,7 @@
+         for(item in checklistData){
+             inventoryRef.child(item.inventoryId.toString()).setValue(item)
+         }
+-    }
++    }*/
+     private fun readChecklist(){
+         val roomNum:TextView = findViewById<TextView>(R.id.room_no_Checklist2)
+         val roomType:TextView = findViewById<TextView>(R.id.room_Type_Checklist2)
+@@ -121,28 +146,22 @@
+         })
+ 
+ 
+-        val checklistRef = database.getReference("Inventory/")
+-        checklistRef.addValueEventListener(object : ValueEventListener {
+-            override fun onDataChange(dataSnapshot: DataSnapshot) {
+-                for(data in dataSnapshot.children){
+-                    val model = data.getValue(InventoryModel::class.java)
+-                    checklistData.add(model as InventoryModel)
+-                }
+-                if(checklistData.size > 0){
+-                    val recyclerView = findViewById<RecyclerView>(R.id.checklistRecyclerView)
+-                    checklistAdapter = ChecklistAdapter(applicationContext, checklistData)
+-                    recyclerView.layoutManager = LinearLayoutManager(applicationContext)
+-                    recyclerView.adapter = checklistAdapter
+-                    checklistAdapter.getItemCount()
+-                    recyclerView.setHasFixedSize((true))
+-                }
+-            }
++    }
++    override fun onSaveInstanceState(outState: Bundle) {
++        super.onSaveInstanceState(outState)
++        for (data in checklistData){
++            checklistData1.add(data)
++        }
++        outState.putParcelableArrayList(RECYCLER_POSITION_KEY, checklistData1)
+ 
+-            override fun onCancelled(error: DatabaseError) {
+-
+-            }
+-        })
+-
++    }
++    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
++        // Restore RecyclerView state
++        if (savedInstanceState.containsKey(RECYCLER_POSITION_KEY)) {
++            mPosition = savedInstanceState.getInt(RECYCLER_POSITION_KEY)
++            if (mPosition == RecyclerView.NO_POSITION) mPosition = 0
++                checklistRecyclerView.smoothScrollToPosition(mPosition) // Scroll the RecyclerView to mPosition
++        }
++        super.onRestoreInstanceState(savedInstanceState)
+     }
+-
+ }
+\ No newline at end of file

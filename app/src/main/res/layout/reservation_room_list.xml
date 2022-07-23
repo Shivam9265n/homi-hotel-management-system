@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    tools:context=".ReservationStoredList">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/cart_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/headerColor">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    app:alignItems="center"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between">
+
+                    <ImageView
+                        android:id="@+id/arrow_back_icon"
+                        android:layout_width="@dimen/header_image"
+                        android:layout_height="@dimen/header_image"
+                        app:srcCompat="@drawable/up_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Reservation Added"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/header_text" />
+
+                    <ImageView
+                        android:id="@+id/delete_cart"
+                        android:layout_width="@dimen/header_image"
+                        android:layout_height="@dimen/header_image"
+                        app:srcCompat="@drawable/rubishbinwhite" />
+                </com.google.android.flexbox.FlexboxLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:alignItems="center"
+            app:flexWrap="wrap">
+
+            <CheckBox
+                android:id="@+id/check_all"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:buttonTint="@color/secondaryTextColor"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textSize="20dp" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                tools:context=".ReservationStoredList">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:animateLayoutChanges="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp"
+                    app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                </androidx.recyclerview.widget.RecyclerView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+
+                    android:fadingEdgeLength="10dp"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="#FF6200EE">
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        app:alignItems="center"
+                        app:flexWrap="wrap"
+                        app:justifyContent="space_between">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="SubTotal:"
+                                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/totalRevPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:gravity="center"
+                                android:text=" RM 0.00"
+                                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                                android:textColor="@color/white"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/checkout_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Button"
+                            android:backgroundTint="@color/button_colour"
+                            android:text="Proceed" />
+                    </com.google.android.flexbox.FlexboxLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

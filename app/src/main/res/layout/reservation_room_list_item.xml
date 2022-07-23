@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="20dp"
+    android:elevation="20dp"
+    android:padding="10dp"
+    app:cardCornerRadius="8dp">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:alignItems="center"
+        app:flexWrap="wrap"
+        app:justifyContent="space_between">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkbox_in_list"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="10dp"
+            android:checked="true" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:cardCornerRadius="5dp">
+
+            <ImageView
+                android:id="@+id/roomImage"
+                android:layout_width="90dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/deluxe" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="5dp"
+            app:flexDirection="column"
+            app:flexWrap="wrap"
+            app:justifyContent="space_between">
+
+            <TextView
+                android:id="@+id/roomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room Type"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textColor="@color/floating_btn"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/roomCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room Type"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textColor="@color/floating_btn"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bed_add_on"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bed Add-On"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/roomPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="RM "
+                android:textColor="#fc0707" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:alignItems="center"
+            app:flexDirection="column"
+            app:flexWrap="wrap"></com.google.android.flexbox.FlexboxLayout>
+    </com.google.android.flexbox.FlexboxLayout>
+</androidx.cardview.widget.CardView>

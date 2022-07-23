@@ -1,0 +1,24 @@
+Index: app/src/main/java/com/example/bait2113_homi_hms/Checklist/ChecklistViewModelFactory.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/bait2113_homi_hms/Checklist/ChecklistViewModelFactory.kt	(date 1618635146414)
++++ app/src/main/java/com/example/bait2113_homi_hms/Checklist/ChecklistViewModelFactory.kt	(date 1618635146414)
+@@ -0,0 +1,16 @@
++/*package com.example.bait2113_homi_hms.Checklist
++
++import android.app.Application
++import androidx.lifecycle.ViewModel
++import androidx.lifecycle.ViewModelProvider
++
++class ChecklistViewModelFactory(
++        private val application: Application) : ViewModelProvider.Factory {
++    @Suppress("unchecked_cast")
++    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
++        if (modelClass.isAssignableFrom(ChecklistViewModel::class.java)) {
++            return ChecklistViewModel(application) as T
++        }
++        throw IllegalArgumentException("Unknown ViewModel class")
++    }
++}*/

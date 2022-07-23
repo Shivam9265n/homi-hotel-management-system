@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!--GENERAL-->
+    <color name="floating_btn">#0cc5b7</color>
+    <color name="orange">#e75748</color>
+    <color name="item_title">#283593</color>
+    <color name="backgroundColor">#f3e5f5</color>
+    <color name="headerColor">#FF6200EE</color>
+    <color name="button_colour">#0cc5b7</color>
+
+    <!--JE#FF3700B3-->
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="secondaryTextColor">#858585</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="price_in_desc">#46aa86</color>
+    <color name="button_in_desc">#ff934b</color>
+
+    <!--RoomDesc-->
+    <color name="yellow">#FF9A00</color>
+    <color name="darkGray">#3A3939</color>
+    <color name="hintTextColor">#787878</color>
+    <color name="lightPink">#FFF5F5</color>
+</resources>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".report.ReportActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/triangle_pattern_white"
+        tools:context=".payment.PaymentComplete">
+
+        <TextView
+            android:id="@+id/text_label_payment_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/payment_method"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_done"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar38" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_payment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/payment_time"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_baseline_access_time_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar39" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_cust_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/customer_name"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_assign"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar16" />
+
+        <View
+            android:id="@+id/horizontalBar36"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_cust_name" />
+
+        <View
+            android:id="@+id/horizontalBar37"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_contact_no" />
+
+        <View
+            android:id="@+id/horizontalBar38"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_invoice_no" />
+
+        <View
+            android:id="@+id/horizontalBar39"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_payment_method" />
+
+        <View
+            android:id="@+id/horizontalBar40"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_payment_time" />
+
+        <TextView
+            android:id="@+id/text_invoice_cust_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar16" />
+
+        <TextView
+            android:id="@+id/text_invoice_contact_no"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar36" />
+
+        <TextView
+            android:id="@+id/text_invoice_no"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar37" />
+
+        <TextView
+            android:id="@+id/text_invoice_payment_method"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar38" />
+
+        <TextView
+            android:id="@+id/text_invoice_payment_time"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar39" />
+
+        <TextView
+            android:id="@+id/text_invoice_total_amt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar15" />
+
+        <TextView
+            android:id="@+id/text_subtotal_amount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar13" />
+
+        <TextView
+            android:id="@+id/text_reservation_no"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/n_a"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintStart_toEndOf="@+id/text_label_invoice_no"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/horizontalBar11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/text_title_payment_complete"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <View
+            android:id="@+id/horizontalBar13"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_reservation_no"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <View
+            android:id="@+id/horizontalBar14"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_subtotal"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <View
+            android:id="@+id/horizontalBar15"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_tax_amount"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <View
+            android:id="@+id/horizontalBar16"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <View
+            android:id="@+id/horizontalBar17"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_total_amount" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/reservation_no"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_baseline_confirmation_number_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_title_payment_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/reservation_information"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline4"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_label_invoice_no" />
+
+        <TextView
+            android:id="@+id/text_label_reservation_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/reservation_date"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_baseline_confirmation_number_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar11" />
+
+        <TextView
+            android:id="@+id/text_invoice_reservation_date"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar11" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/customer_details"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline4"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar17" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/total_amount"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_baseline_monetization_on_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar15" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_tax_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tax_amount"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_add_housekeeping"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar14" />
+
+        <TextView
+            android:id="@+id/text_invoice_tax_amount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/n_a"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar14" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/subtotal"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_baseline_attach_money_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar13" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_contact_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/contact_no"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_baseline_smartphone_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar36" />
+
+        <TextView
+            android:id="@+id/text_label_invoice_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/transaction_no"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            app:drawableStartCompat="@drawable/ic_checklist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalBar37" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

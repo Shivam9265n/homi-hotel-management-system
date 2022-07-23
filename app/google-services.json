@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "135151911504",
+    "firebase_url": "https://homy-mobile-app-default-rtdb.firebaseio.com",
+    "project_id": "homy-mobile-app",
+    "storage_bucket": "homy-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135151911504:android:0425ddbc7673f05c4d4755",
+        "android_client_info": {
+          "package_name": "com.example.bait2113_homi_hms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135151911504-r7g7sv70rovfpbmjjb1ms2ffeq7o760o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSuoEdMh77O4TrLT7b3T3awcyxExqYCQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135151911504-r7g7sv70rovfpbmjjb1ms2ffeq7o760o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135151911504:android:30975062412da8274d4755",
+        "android_client_info": {
+          "package_name": "com.example.homytest2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135151911504-r7g7sv70rovfpbmjjb1ms2ffeq7o760o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSuoEdMh77O4TrLT7b3T3awcyxExqYCQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135151911504-r7g7sv70rovfpbmjjb1ms2ffeq7o760o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

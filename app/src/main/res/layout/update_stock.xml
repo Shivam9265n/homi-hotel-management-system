@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stockName_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="@string/product_name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/prodQty_layout"
+            android:layout_width="255dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_quantity">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/prodQty_text_input"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/white"
+                android:hint="@string/stock_quantity"
+                android:inputType="number"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                app:boxBackgroundColor="@android:color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

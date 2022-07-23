@@ -1,0 +1,232 @@
+<resources>
+    <string name="app_name">BAIT2113-Homi-HMS</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="dialogTitle">Confirmation</string>
+    <string name="dialogMessage">Are you sure want to logout ?</string>
+
+    <!--floor-->
+    <!--    <string-array name="floor_array">
+        <item>All</item>
+        <item>First Floor</item>
+        <item>Second Floor</item>
+        <item>Third Floor</item>
+    </string-array>-->
+
+    <!--housekeeping-->
+    <string name="req_date">Date Request:</string>
+    <string name="housekeeper_incharge">Housekeeper :</string>
+    <string name="assign">Assign</string>
+    <string name="checklist">Checklist</string>
+    <string name="housekepeeing">Housekepeeing</string>
+    <string name="date_created">Date Created :</string>
+    <!--checklist-->
+    <string name="bed_clean">Bed Clean</string>
+    <string name="bathroom_clean">Bathroom Clean</string>
+    <string name="dustbin_clean">Dustbin Clean</string>
+    <string name="vacuum_room">Vacuum Room</string>
+    <string name="appliance_fixtures_clean">Appliance Fixtures Clean</string>
+    <string name="towel_clean">Towel Clean</string>
+
+    <!--checklist-->
+    <string name="date">Date:</string>
+    <string name="checklist_date">Housekeeping Date:</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="submut_confirm">Confirm Submit?</string>
+    <string name="submut_msg">The checklist will be submitted.</string>
+    <string name="confirm">Confirm</string>
+    <string name="continue_msg">Continue</string>
+    <string name="cancel">Cancel</string>
+    <string name="toast_checklistMsg">The checklist is not completed!!!</string>
+    <string name="toast_checklistSuccessMsg">The checklist submit.</string>
+    <string name="checklist_history">Checklist History</string>
+    <!--Inventory-->
+    <string name="stock_quantity">Stock Quantity</string>
+    <string name="low_stock_limit">Low Stock Limit</string>
+    <string name="product_name">Stock Name</string>
+    <string name="add">Add</string>
+    <string name="toast_inv_stock_msg">The add stock form not yet completed.</string>
+    <string name="toast_add_stock_msg">The stock is created.</string>
+    <string name="toast_delete_stock_msg">The stock is deleted.</string>
+    <string name="done">Done</string>
+    <string name="quantity">Quantity</string>
+    <string name="add_stock">Add Stock</string>
+    <string name="edit_stock">Edit Stock</string>
+    <string name="stockDialogMessage_save">Do you want to save the stock details ?</string>
+    <string name="updateStock">Update Stock</string>
+    <string name="discard_msg">Are you sure to discard the changes ?</string>
+    <string name="dialogTitle_discard">Discard Changes </string>
+
+    <string name="add_housekeeping">Add Housekeeping</string>
+    <string name="room_no">Room No</string>
+    <string name="room_type">Room Type</string>
+    <string name="room_category">Room Category</string>
+    <string name="assign_housekeeper">Assign Housekeeper</string>
+    <string name="msg">--No Room Available--</string>
+    <string name="addStaffMsg">--Staff Name--</string>
+    <string name="filter">Filter</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string-array name="stockOption">
+        <item>All Stock</item>
+        <item>Low Stock</item>
+    </string-array>
+    <!--JE-->
+    <string name="allStock">All Stock</string>
+
+
+    <!-- Payment -->
+    <string-array name="payment_method">
+        <item name="card">Credit Card</item>
+        <item name="cash">Cash</item>
+    </string-array>
+
+    <string-array name="report_type">
+        <item name="search">Search</item>
+        <item name="day">Day</item>
+        <item name="month">Month</item>
+        <item name="year">Year</item>
+    </string-array>
+
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="product_name1">Product Name:</string>
+
+    <!--JE-->
+    <string name="saveMsg">Save</string>
+    <string name="pay_by_card">Pay By Card</string>
+    <string name="card_number">Card Number</string>
+    <string name="n_a">N/A</string>
+    <string name="pay_by_cash">Pay By Cash</string>
+    <string name="change">Change:</string>
+    <string name="enter_amount_received">Enter Amount Received</string>
+    <string name="enter_payment_amount">Enter payment amount</string>
+    <string name="payment_amt">Payment Amt</string>
+    <string name="invoice_no">Invoice No.</string>
+    <string name="payment_amount">Payment Amount</string>
+    <string name="payment_complete">Payment Complete</string>
+    <string name="green_tick">Green Tick</string>
+    <string name="payment">Payment</string>
+    <string name="reservation_info">Reservation Info</string>
+    <string name="grand_total">Grand Total:</string>
+    <string name="pay">Pay</string>
+    <string name="select_payment_method">Select Payment Method</string>
+    <string name="sales">Sales</string>
+    <string name="_0">0</string>
+    <string name="rm0_00">RM0.00</string>
+    <string name="summary">Summary</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_time">Payment Time</string>
+    <string name="reservation_no">Reservation No.</string>
+    <string name="reservation_information">Reservation Information</string>
+    <string name="reservation_date">Reservation Date</string>
+    <string name="customer_details">Customer Details</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="tax_amount">Tax Amount</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="finish">Finish</string>
+    <string name="contact_no">Contact No.</string>
+    <string name="transaction_no">Transaction No.</string>
+    <string name="amount">amount</string>
+    <string name="go_to_invoice_summary">Go to invoice summary</string>
+    <string name="transaction_id">transaction_id</string>
+    <string name="_0000_00_00t00_00_00">0000-00-00T00:00:00</string>
+    <string name="limit_search_result">Showing first %d results, refine search if sales = %d</string>
+    <string name="enter_start_keyword">Enter starting keyword\n(e.g.: \'-MY\'): </string>
+    <string name="enter_year">Enter year (e.g. 2020, 4 digits)</string>
+    <string name="start_year">Start year (e.g. 2020), 4 digits</string>
+    <string name="end_year">End year, 4 digits</string>
+    <string name="date_choose">Date\n(click below to choose): </string>
+    <string name="guestName">Guest Name     :</string>
+    <string name="checkIn">Check In</string>
+    <string name="checkOut">Check Out</string>
+    <string name="totalItem">"Total items : "</string>
+    <string name="status">Status :</string>
+    <string name="totalPayment">"Total Payment   : RM "</string>
+    <string name="guestNameGeneral">Guest Name*</string>
+    <string name="contactNo">Contact No.*</string>
+    <string name="email">Email*</string>
+    <string name="remarks">Remarks*</string>
+    <string name="delete">Delete</string>
+    <string name="bedAddOn">Bed Add-On (RM 100)</string>
+    <string name="available">Available</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="payMethod">Pay Method</string>
+    <string name="ringgit">RM</string>
+    <string name="dialogTitle_save">Save Changes </string>
+    <string name="dialogMessage_save">Do you want to save the reservation details ?</string>
+    <string name="stock_details">Stock Details</string>
+    <string name="reserve">Reserve</string>
+
+
+    <string name="date_filter">2021-04-21</string>
+
+    <!-- String for login activity -->
+    <string name="homy_hotel">HOMY HOTEL</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="dont_account">Do not have an account? </string>
+
+    <!-- String for register activity -->
+    <string name="sign_up">Sign Up</string>
+    <string name="email_id">Email ID</string>
+    <string name="retype_password">Re-type Password</string>
+    <string name="security_question">Security Question : </string>
+    <string name="register">Register</string>
+    <string name="have_account">Already have an account? </string>
+    <string name="log_in_button_register_page">Click Here </string>
+    <string name="yourAnswer">Your Answer</string>
+
+    <!-- String for forgot password activity -->
+    <string name="ask_email">Provide your email address to continue with resetting the password</string>
+    <string name="forgot_password_question">Forgot Password?</string>
+    <string name="reset_password_text">Answer the security question below to reset your password</string>
+    <string name="answer">Answer</string>
+    <string name="lock">Lock</string>
+
+    <!-- String for reset password activity -->
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password_ask">Your New Password?</string>
+    <string name="double_confirm">Confirm Again</string>
+    <string name="enter">Enter</string>
+
+    <!-- String for temporary main activity -->
+    <string name="tempHome">Temporary Homepage</string>
+    <string name="myProfile">Profile</string>
+
+    <!-- String for profile activity -->
+    <string name="profile">Profile</string>
+    <string name="image">Image</string>
+    <string name="name">Your Name</string>
+    <string name="yourPassword">Your Password</string>
+    <string name="phoneNumber">Your Phone Number</string>
+    <string name="emailAddress">Your Email Address</string>
+    <string name="homeAddress">Your Home Address</string>
+    <string name="edit">Edit</string>
+    <string name="logOut">Log Out</string>
+    <string name="uploadPicture">Upload</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="customer_name">Name</string>
+    <string name="enter_here">Enter here...</string>
+
+</resources>

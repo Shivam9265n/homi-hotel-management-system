@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!--    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+
+        <TextView
+            android:id="@+id/housekeepingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_housekeeping"
+            android:textStyle="bold"
+            />
+    </com.google.android.flexbox.FlexboxLayout>-->
+    <!--    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="0dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <Spinner
+            android:id="@+id/spinnerRoom"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/border"
+            android:spinnerMode="dropdown" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <!-- <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addHK_roomNo"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edit_text_border">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addHK_roomNo_text_input"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:hint="@string/room_no"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>-->
+    <!--</com.google.android.flexbox.FlexboxLayout>-->
+    <!--<com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="0dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addHK_roomCat"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edit_text_border">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addHK_roomCat_text_input"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:hint="@string/room_category"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.flexbox.FlexboxLayout>-->
+    <!--    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="280dp"
+        android:background="@color/orange"/>
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="0dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start">
+        <Button
+            android:id="@+id/cancelHK_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/cancel" />
+        <Button
+            android:id="@+id/addHK_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/add" />
+    </com.google.android.flexbox.FlexboxLayout>-->
+</RelativeLayout>

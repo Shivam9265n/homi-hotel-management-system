@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_home"
+        android:title="Home" />
+
+    <group
+        android:id="@+id/group5"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/nav_account"
+            android:title="My Account" />
+    </group>
+
+    <item android:title="Categories">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_reservation"
+                    android:icon="@drawable/reservation"
+                    android:title="Reservation" />
+
+                <item
+                    android:id="@+id/nav_checkIn"
+                    android:icon="@drawable/check_in"
+                    android:title="Check In" />
+
+                <item
+                    android:id="@+id/nav_checkOut"
+                    android:icon="@drawable/check_out"
+                    android:title="Check Out" />
+
+                <item
+                    android:id="@+id/nav_houseKeeping"
+                    android:icon="@drawable/housekeeping"
+                    android:title="Housekeeping" />
+
+                <item
+                    android:id="@+id/nav_checklist"
+                    android:icon="@drawable/checklist"
+                    android:title="Checklist History" />
+
+                <item
+                    android:id="@+id/nav_inventory"
+                    android:icon="@drawable/inventory"
+                    android:title="Inventory" />
+
+            </group>
+        </menu>
+    </item>
+
+    <group
+        android:id="@+id/group4"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_reports"
+            android:icon="@drawable/nav_reports"
+            android:title="Reports" />
+    </group>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/nav_logout"
+        android:title="Logout" />
+</menu>
